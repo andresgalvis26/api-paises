@@ -1,0 +1,28 @@
+
+/* Colores */
+:root{
+    --color-bg: #bebebe;
+    --color-bg-secondary: #ffffff;
+    --color-text: #000000;
+}
+
+
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body{
+    font-family: 'Nunito Sans', sans-serif;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}

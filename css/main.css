@@ -1,11 +1,15 @@
-/* Colores 
+/* Colores */
 :root{
+    /*
     --color-bg: #bebebe;
     --color-bg-secondary: #ffffff;
     --color-text: #000000;
+    */
+    --box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    --border-radius: 0.35rem;
+
 }
 */
-
 
 html {
     box-sizing: border-box;
@@ -48,7 +52,8 @@ body.dark-mode{
 .navbar {
     background-color: var(--color-bg-secondary);
      /* offset-x | offset-y | blur-radius | spread-radius | color */
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    box-shadow: var(--box-shadow);
+    
 }
 
 .navbar-content {
@@ -78,6 +83,25 @@ body.dark-mode{
     align-items: center;
 }
 
+.form-search{
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    background-color: var(--color-bg-secondary);
+    padding: 1rem;
+}
+
+.form-search i {
+    opacity: 0.5;
+}
+
+.form-search input{
+    border: none;
+    outline: none;
+    margin-left: 1rem;
+    background-color: var(--color-bg-secondary);
+    color: var(--color-text)
+}
+
 .img-fluid{
     width: 100%;
 }
@@ -91,9 +115,9 @@ body.dark-mode{
 
 .card {
     background-color: var(--color-bg-secondary);
-    border-radius: 0.35rem;
+    border-radius: var(--border-radius);
     /* offset-x | offset-y | blur-radius | spread-radius | color */
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.08);
+    box-shadow: var(--box-shadow);
 }
 
 .card img {
@@ -135,6 +159,15 @@ body.dark-mode{
     .filter-content{
         flex-direction: column;
         align-items: flex-start;
+    }
+
+    .form-search{
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .form-search input{
+        width: 85%;
     }
 
     .grid {

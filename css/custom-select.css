@@ -28,7 +28,7 @@
 
 /* Point the arrow upwards when the select box is open (active): */
 .select-selected.select-arrow-active:after {
-    border-color: transparent transparent var(--color-text); transparent;
+    border-color: transparent transparent var(--color-text);
     top: 14px;
 }
 
@@ -85,5 +85,4 @@
     .form-search input{
         width: 85%;
     }
-
 }

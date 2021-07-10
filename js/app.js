@@ -11,6 +11,7 @@ const fetchData = async () => {
         /*console.log(data)*/
         banderillas(data)
         formularioCliente(data)
+        filtros(data)
     } catch (error){
         console.log(error)
     }
@@ -36,6 +37,9 @@ const banderillas = data => {
                 <p>
                     <b>Región: </b>
                     ${element.region}
+                </p>
+                <p>
+                    <a href="pais.html?name=${element.name}">${element.name}</a>
                 </p>
             </div>
         </article>

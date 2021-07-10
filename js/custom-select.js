@@ -1,3 +1,5 @@
+const filtros = data => {
+
 var x, i, j, l, ll, selElmnt, a, b, c;
 /* Look for any elements with the class "custom-select": */
 x = document.getElementsByClassName("custom-select");
@@ -35,6 +37,17 @@ for (i = 0; i < l; i++) {
               y[k].removeAttribute("class");
             }
             this.setAttribute("class", "same-as-selected");
+
+            // Agregar
+            const query = s.options[i].value
+            //console.log(query)
+            if (query === '') {
+                banderillas(data)
+            } else {
+                const filterData = data.filter(item => item.region === query)
+                banderillas(filterData)
+            }
+
             break;
           }
         }
@@ -78,3 +91,4 @@ function closeAllSelect(elmnt) {
 /* If the user clicks anywhere outside the select box,
 then close all select boxes: */
 document.addEventListener("click", closeAllSelect);
+}

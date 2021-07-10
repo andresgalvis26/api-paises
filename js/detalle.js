@@ -1,4 +1,9 @@
 const banderas = document.getElementById("banderas")
+// Accediendo a toda la URL
+const query = new URLSearchParams(window.location.search)
+// Parametros
+const params = query.get('name')
+console.log(params)
 
 document.addEventListener("DOMContentLoaded", e => {
     fetchData()
@@ -9,9 +14,12 @@ const fetchData = async () => {
         const res = await fetch("api.json")
         const data = await res.json()
         /*console.log(data)*/
-        banderillas(data)
-        formularioCliente(data)
-        filtros(data)
+
+        /* Filtrando */
+        const filtroData = data.filter(item => item.name === params)
+
+
+        banderillas(filtroData)
     } catch (error){
         console.log(error)
     }
@@ -37,10 +45,6 @@ const banderillas = data => {
                 <p>
                     <b>Región: </b>
                     ${element.region}
-                </p>
-                <hr>
-                <p>
-                    <a href="pais.html?name=${element.name}">Ver más</a>
                 </p>
             </div>
         </article>

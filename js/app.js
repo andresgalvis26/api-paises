@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", e => {
 
 const fetchData = async () => {
     try {
-        const res = await fetch("api.json")
+        const res = await fetch("https://restcountries.com/v3.1/all")
         const data = await res.json()
         /*console.log(data)*/
         banderillas(data)
@@ -23,9 +23,9 @@ const banderillas = data => {
     data.forEach(element => {
         elementos += `
         <article class="card">
-            <img src="${element.flag}" alt="" class="img-fluid">
+            <img src="${element.flags.png}" alt="" class="img-fluid">
             <div class="card-content">
-                <h3>${element.name}</h3>
+                <h3>${element.name.common}</h3>
                 <p>
                     <b>Population: </b>
                     ${element.population}
@@ -40,7 +40,7 @@ const banderillas = data => {
                 </p>
                 <hr>
                 <p>
-                    <a href="pais.html?name=${element.name}">Ver más</a>
+                    <a href="pais.html?name=${element.name.common}">Ver más</a>
                 </p>
             </div>
         </article>
